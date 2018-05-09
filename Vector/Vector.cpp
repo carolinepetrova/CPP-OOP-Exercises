@@ -56,7 +56,7 @@ void Vector::removeAt(int position) {
 	}
 	for (int i = 0; i < this->size; i++) {
 		if (i == position) {
-			for (int j = i; j < size - 1; i++) {
+			for (int j = i; j < size - 1; j++) {
 				this->container[j] = this->container[j + 1];
 			}
 		}
