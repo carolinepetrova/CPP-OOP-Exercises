@@ -27,16 +27,16 @@ void LinkedList<T>::copy(const LinkedList<T> & other) {
 }
 template<typename T>
 void LinkedList<T>::Delete() {
-	Node * node = root;
+	Node<T> * node = root;
 	while (!node) {
-		Node * forDelete = node;
+		Node<T> * forDelete = node;
 		node = node->next;
 		delete forDelete;
 	}
 }
 template<typename T>
 LinkedList<T>::LinkedList() : root(NULL) {
-	root = new Node();
+	root = new Node<T>();
 }
 template<typename T>
 LinkedList<T>::LinkedList(const LinkedList<T> & other) {
@@ -83,7 +83,7 @@ Node<T> * LinkedList<T>::getAt(int index) const {
 
 template<typename T>
 void LinkedList<T>::insertAtBeginning(T _data) {
-	Node<T>* newNode = new Node();
+	Node<T>* newNode = new Node<T>();
 	newNode->data = _data;
 
 	newNode->next = root;
@@ -93,7 +93,7 @@ void LinkedList<T>::insertAtBeginning(T _data) {
 
 template<typename T>
 void LinkedList<T>::insertToEnd(T _data) {
-	Node<T> * newNode = new Node();
+	Node<T> * newNode = new Node<T>();
 	newNode->data = _data;
 
 	Node<T> * lastNode = lookup(size-1);
@@ -103,7 +103,7 @@ void LinkedList<T>::insertToEnd(T _data) {
 
 template<typename T>
 void LinkedList<T>::insertBefore(T _data,T element) {
-	Node<T> * newNode = new Node();
+	Node<T> * newNode = new Node<T>();
 	newNode->data = _data;
 	Node<T> * nodes = root;
 	int index = 0;
@@ -125,7 +125,7 @@ void LinkedList<T>::insertBefore(T _data,T element) {
 }
 template<typename T>
 void LinkedList<T>::insertAfter(T _data,T element) {
-	Node<T> * newNode = new Node();
+	Node<T> * newNode = new Node<T>();
 	newNode->data = _data;
 	Node<T> * nodes = root;
 	int index = 0;
