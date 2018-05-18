@@ -35,6 +35,8 @@ private:
 	static int size;
 };
 
+#include "LinkedList.hpp"
+
 #endif
 
 #pragma once
